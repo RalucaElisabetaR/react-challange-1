@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
@@ -12,10 +12,8 @@ const ExpenseForm = () => {
     //   enteredAmount: '',
     //   enteredDate: ''
     // })
-
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
-
         //---- ALTERNATIVE 1 ----
         // setUserInput({
         //   ...userInput,
@@ -39,7 +37,7 @@ const ExpenseForm = () => {
             amount: enteredAmount,
             date: new Date(enteredDate),
         }
-        console.log(expenseData)
+        props.onSaveExpenseData(expenseData)
         setEnteredTitle('')
         setEnteredAmount('')
         setEnteredDate('')
@@ -70,7 +68,7 @@ const ExpenseForm = () => {
                     <label>Date</label>
                     <input
                         type="date"
-                        value="enteredDate"
+                        value={enteredDate}
                         min="2019-01-01"
                         max="2022-12-31"
                         onChange={dateChangeHandler}
