@@ -14,12 +14,13 @@ const ExpenseForm = (props) => {
     // })
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
-        //---- ALTERNATIVE 1 ----
+
+        //---- ALTERNATIVE 1 (not so good)----
         // setUserInput({
         //   ...userInput,
         //   enteredTitle: event.target.value,
         // })
-        //---- ALTERNATIVE 2----
+        //---- ALTERNATIVE CORRECT 2----
         // setUserInput((prevState) => {
         //   return { ...prevState, enteredTitle: event.target.value }
         // })

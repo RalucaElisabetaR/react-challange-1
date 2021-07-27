@@ -1,5 +1,0 @@
-{
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
-  "prettier.jsxBracketSameLine": true,
-  "prettier.jsxSingleQuote": true
-}
